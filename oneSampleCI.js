@@ -46,7 +46,7 @@ function generate(oId,xId,SId,numberId,ConfidenceId,contextId,unitsId,pId,aId,nI
         MOE = MOE.toFixed(3);
         rightBound = rightBound.toFixed(3);
         leftBound = leftBound.toFixed(3);
-        calculations = "σ="+o+" x̅="+p+" C="+C+" n="+number+"<br>z*=invNorm((1-"+C+")/2)="+z+"<br>x̅±(z*)*SE="+x+"±"+z+"*"+SE+"="+x+"±"+MOE+"<br>=("+leftBound+", "+rightBound+")";
+        calculations = "σ="+o+" x̅="+x+" C="+C+" n="+number+"<br>z*=invNorm((1-"+C+")/2)="+z+"<br>x̅±(z*)*SE="+x+"±"+z+"*"+SE+"="+x+"±"+MOE+"<br>=("+leftBound+", "+rightBound+")";
         var normReasons = " it was not given in the prompt and n<30";
     }
 
