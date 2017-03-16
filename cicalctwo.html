@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Two-Sample Confidence Interval Calculator</title>
+    <script src="library.js"></script>
+    <script src="twoSampleCI.js"></script>
+    <meta charset="utf-8">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Two-Sample Confidence Interval Calculator</h1>
+        <a href="cicalc.html">One-Sample Confidence Interval Calculator</a>
+        <br>
+        (Mind only z CI's function at this time)
+        <div id="proportionMode" class="alert alert-info alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert">×</a>
+            STATISTIC MODE: Non-Proportion
+        </div>
+        <form>
+            <p>
+                <div class="btn-group">
+                    <button type="button" onclick="setToNonProportion('proportionMode','xToP','xToP2')" class="btn btn-primary">Set Non-Proportion</button>
+                    <button type="button" onclick="setToProportion('proportionMode','xToP','xToP2')" class="btn btn-primary">Set Proportion</button>
+                </div>
+            </p>
+            <p>
+                <div class="btn-group">
+                    <button type="button" id="approxNormButton" onclick="togglePopNormButton('approxNormButton')" class="btn btn-primary">Population is given as approximately normal</button>
+                </div>
+            </p>
+            <p>
+                <div class="btn-group">
+                    <button type="button" id="srsCheckButton" onclick="toggleSrsCheckButton('srsCheckButton')" class="btn btn-primary">Data was collected using an SRS</button>
+                </div>
+            </p>
+            <p>
+                σ1 =
+                <input type="text" id="popSD">
+            </p>
+            <p>
+                σ2 =
+                <input type="text" id="popSD2">
+            </p>
+            <p>
+                <span id="xToP">x̅</span>1 =
+                <input type="text" id="sampleMean">
+            </p>
+            <p>
+                <span id="xToP2">x̅</span>2 =
+                <input type="text" id="sampleMean2">
+            </p>
+            <p>
+                S1 =
+                <input type="text" id="sampleSD">
+            </p>
+            <p>
+                S2 =
+                <input type="text" id="sampleSD2">
+            </p>
+            <p>
+                n1 =
+                <input type="text" id="sampleUnits">
+            </p>
+            <p>
+                n2 =
+                <input type="text" id="sampleUnits2">
+            </p>
+            <p>
+                C =
+            <input type="text" id="CIPercent"> (0.XX)
+            </p>
+            <p>
+                Context =
+                <input type="text" id="context"> (...that the true mean of ___this_text_here___ is between...)
+            </p>
+            <p>
+                Units =
+                <input type="text" id="units">
+            </p>
+            <div class="btn-group">
+                <button type="button" onclick="generate('popSD','popSD2','sampleMean','sampleMean2','sampleSD','sampleSD2','sampleUnits','sampleUnits2','CIPercent','context','units','p','a','n','i','c')" class="btn btn-primary">Generate CI</button>
+            </div>
+            <br><br>
+            <div id="response">
+                <div id="p"></div>
+                <br>
+                <div id="a"></div>
+                <br>
+                <div id="n"></div>
+                <br>
+                <div id="i"></div>
+                <br>
+                <div id="c"></div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
